@@ -1,6 +1,8 @@
 <div class="row">
     <div class="col-xs-12 col-md-6 offset-3">
-        <div class="alert alert-danger" *ngIf="error">{{ error }}</div>
+        <!-- <div class="alert alert-danger" *ngIf="error">{{ error }}</div> -->
+        <!-- this might the solution for the Modal in Order manager, replace [close] with (close)  -->
+        <app-alert [message]="error" *ngIf="error" (close)="close()"></app-alert>
         <div *ngIf="loading" style="text-align: center;">
             <app-loading-spinner></app-loading-spinner>
         </div>
